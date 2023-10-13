@@ -1,32 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_pustr_fd.c                                      :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mrekalde <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mrekalde <mrekalde@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/25 16:59:35 by mrekalde          #+#    #+#             */
-/*   Updated: 2023/09/25 17:08:37 by mrekalde         ###   ########.fr       */
+/*   Created: 2023/10/13 13:33:18 by mrekalde          #+#    #+#             */
+/*   Updated: 2023/10/13 13:49:55 by mrekalde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef FT_PRINTF
+# define FT_PRINTF
 
-void	ft_putstr_fd(char *s, int fd)
-{
-	int	i;
+# include <unistd.h>
+# include <stdarg.h>
+# include <stddef.h>
+# include <stdlib.h>
 
-	i = 0;
-	while (s[i])
-	{
-		ft_putchar_fd(s[i], fd);
-		i++;
-	}
-}
-/*
-int	 main()
-{
-	char str[] = "hola";
-	ft_putstr_fd(str, 1);
-}
-*/
+int	ft_printf(char const *, ...);
+
+#endif

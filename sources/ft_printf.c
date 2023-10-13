@@ -1,24 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mrekalde <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mrekalde <mrekalde@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/25 16:41:01 by mrekalde          #+#    #+#             */
-/*   Updated: 2023/09/25 16:54:02 by mrekalde         ###   ########.fr       */
+/*   Created: 2023/10/13 12:43:32 by mrekalde          #+#    #+#             */
+/*   Updated: 2023/10/13 13:51:30 by mrekalde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/ft_printf.h"
 
-void	ft_putchar_fd(char c, int fd)
+int	ft_printf(char const *str, ...)
 {
-	write(fd, &c, 1);
+	
 }
-/*
-int	main()
-{
-	ft_putchar_fd('a', 2);
-}
-*/
