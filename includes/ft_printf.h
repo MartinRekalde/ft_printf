@@ -6,7 +6,7 @@
 /*   By: mrekalde <mrekalde@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 18:43:28 by mrekalde          #+#    #+#             */
-/*   Updated: 2023/10/17 18:46:16 by mrekalde         ###   ########.fr       */
+/*   Updated: 2023/10/17 18:57:47 by mrekalde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 # include <stddef.h>
 # include <stdlib.h>
 # include <stdarg.h>
-# include <stdio.h>
 
 int	ft_printf(char const *format, ...);
 int	ft_putchar(char c);

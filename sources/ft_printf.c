@@ -6,7 +6,7 @@
 /*   By: mrekalde <mrekalde@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 12:43:32 by mrekalde          #+#    #+#             */
-/*   Updated: 2023/10/17 18:47:12 by mrekalde         ###   ########.fr       */
+/*   Updated: 2023/10/17 18:57:55 by mrekalde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,8 @@ int	ft_printf(char const *format, ...)
 	return (total);
 }
 /* 
+#include <stdio.h>
+
 int main()
 {
 	int		i;
