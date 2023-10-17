@@ -6,7 +6,7 @@
 /*   By: mrekalde <mrekalde@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 12:43:32 by mrekalde          #+#    #+#             */
-/*   Updated: 2023/10/16 16:23:30 by mrekalde         ###   ########.fr       */
+/*   Updated: 2023/10/17 14:53:57 by mrekalde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,19 +19,19 @@ int	check_variable(char c, va_list *ap)
 	if (c == 's')
 		return (ft_putstr(va_arg(*ap, char *)));
 /* 	if (c == 'p')
-		ft_puthex(str);
+		ft_puthex(str); */
 	if (c == 'd')
-		ft_putnbr_decimal(str);
+		return(ft_putnbr_decimal(va_arg(*ap, int)));
 	if (c == 'i')
-		ft_putnbr(str);
-	if (c == 'u')
+		return (ft_putnbr(va_arg(*ap, int)));
+/* 	if (c == 'u')
 		ft_putnbr_decimal_unsigned(str);
 	if (c == 'x')
 		ft_putnbr_hex_minus(str);
 	if (c == 'X')
-		ft_putnbr_hex_mayus(str);
+		ft_putnbr_hex_mayus(str);  */
 	if (c == '%')
-		ft_putchar(str); */
+		return (ft_putchar('%'));
 	return (0);
 }
 
@@ -66,12 +66,24 @@ int	ft_printf(char const *str, ...)
 int main()
 {
 	char	character = 'a';
-	char	string[] = "Hola mundo";
+	char	string[] = "Hola";
+	int		decimal = 1.90;
+	int 	entero = 1234567890;
 	int		i;
 	
-	i = ft_printf("c: %c\n", character);
-	printf("Caracteres: %i\n", i);
-	i = ft_printf("s: %s\n", string);
-	printf("String: %i\n", i);
+	ft_printf("\n");
+	
+	i = ft_printf("%%c: %c\n", character);
+	ft_printf("Caracteres: %i\n\n", i);
+
+	i = ft_printf("%%s: %s\n", string);
+	ft_printf("Caracteres: %i\n\n", i);
+
+	i = ft_printf("%%i: %i\n", entero);
+	ft_printf("Caracteres: %i\n\n", i);
+
+	i = ft_printf("%%%%: %%\n");
+	ft_printf("Caracteres: %i\n\n", i);
+
 	return (0);
 }
