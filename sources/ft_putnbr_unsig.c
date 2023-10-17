@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_putnbr_unsig.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrekalde <mrekalde@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/17 18:43:28 by mrekalde          #+#    #+#             */
-/*   Updated: 2023/10/17 18:46:16 by mrekalde         ###   ########.fr       */
+/*   Created: 2023/10/17 17:47:36 by mrekalde          #+#    #+#             */
+/*   Updated: 2023/10/17 17:48:03 by mrekalde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "../includes/ft_printf.h"
 
-# include <unistd.h>
-# include <stddef.h>
-# include <stdlib.h>
-# include <stdarg.h>
-# include <stdio.h>
+int	ft_putnbr_unsig(unsigned int n)
+{
+	char	*s;
+	int		len;
 
-int	ft_printf(char const *format, ...);
-int	ft_putchar(char c);
-int	ft_putstr(char *s);
-int	ft_putnbr(int n);
-int	ft_putnbr_unsig(unsigned int n);
-int	ft_puthex(size_t n, char x);
-
-#endif
+	s = "0123456789";
+	len = 0;
+	if (n > 9)
+		len += ft_putnbr(n / 10);
+	write(1, &s[n % 10], 1);
+	len++;
+	return (len);
+}

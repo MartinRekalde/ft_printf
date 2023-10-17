@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_puthex.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrekalde <mrekalde@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/17 18:43:28 by mrekalde          #+#    #+#             */
-/*   Updated: 2023/10/17 18:46:16 by mrekalde         ###   ########.fr       */
+/*   Created: 2023/10/17 18:05:02 by mrekalde          #+#    #+#             */
+/*   Updated: 2023/10/17 18:33:54 by mrekalde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "../includes/ft_printf.h"
 
-# include <unistd.h>
-# include <stddef.h>
-# include <stdlib.h>
-# include <stdarg.h>
-# include <stdio.h>
+int	ft_puthex(size_t n, char x)
+{
+	char	*s;
+	int		len;
 
-int	ft_printf(char const *format, ...);
-int	ft_putchar(char c);
-int	ft_putstr(char *s);
-int	ft_putnbr(int n);
-int	ft_putnbr_unsig(unsigned int n);
-int	ft_puthex(size_t n, char x);
-
-#endif
+	if (x == 'x')
+		s = "0123456789abcdef";
+	else
+		s = "0123456789ABCDEF";
+	len = 0;
+	if (n > 15)
+		len += ft_puthex(n / 16, x);
+	write(1, &s[n % 16], 1);
+	len++;
+	return (len);
+}

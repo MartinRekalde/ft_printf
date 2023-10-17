@@ -6,7 +6,7 @@
 /*   By: mrekalde <mrekalde@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 16:59:35 by mrekalde          #+#    #+#             */
-/*   Updated: 2023/10/17 14:49:58 by mrekalde         ###   ########.fr       */
+/*   Updated: 2023/10/17 18:41:34 by mrekalde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,15 @@ int	ft_putstr(char *s)
 	int	i;
 
 	i = 0;
-	while (s[i])
+	if (s == NULL)
+		return (write(1, "(null)", 6));
+	else
 	{
-		ft_putchar(s[i]);
-		i++;
+		while (s[i])
+		{
+			ft_putchar(s[i]);
+			i++;
+		}
+		return (i);
 	}
-	return (i);
 }
