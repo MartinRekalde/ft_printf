@@ -6,7 +6,7 @@
 /*   By: mrekalde <mrekalde@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 17:16:14 by mrekalde          #+#    #+#             */
-/*   Updated: 2023/10/17 14:49:50 by mrekalde         ###   ########.fr       */
+/*   Updated: 2023/10/17 16:45:13 by mrekalde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,3 @@ int	ft_putnbr(int n)
 	len++;
 	return (len);
 }
-// esta función espera a que todos lo numeros se impriman
-// y cada uno devuelva que a impreso 1 y va sumandolos todos
