@@ -6,7 +6,7 @@
 /*   By: mrekalde <mrekalde@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 18:43:28 by mrekalde          #+#    #+#             */
-/*   Updated: 2023/10/17 18:57:47 by mrekalde         ###   ########.fr       */
+/*   Updated: 2023/10/25 18:23:50 by mrekalde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 # define FT_PRINTF_H
 
 # include <unistd.h>
-# include <stddef.h>
-# include <stdlib.h>
 # include <stdarg.h>
 
 int	ft_printf(char const *format, ...);

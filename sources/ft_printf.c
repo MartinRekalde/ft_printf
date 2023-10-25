@@ -6,13 +6,13 @@
 /*   By: mrekalde <mrekalde@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 12:43:32 by mrekalde          #+#    #+#             */
-/*   Updated: 2023/10/25 13:37:23 by mrekalde         ###   ########.fr       */
+/*   Updated: 2023/10/25 18:21:58 by mrekalde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-static int	check_variable(char c, va_list *ap)
+static int	check_variable(va_list *ap, char c)
 {
 	if (c == 'c')
 		return (ft_putchar(va_arg(*ap, int)));
@@ -47,7 +47,7 @@ int	ft_printf(char const *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
-			total += check_variable(format[i], &ap);
+			total += check_variable(&ap, format[i]);
 			i++;
 		}
 		else if (format[i] != '%')

@@ -1,7 +1,7 @@
 NAME = libftprintf.a
 
 SRCS_DIR = sources/
-SRCS = ft_printf.c ft_putchar.c ft_putstr.c ft_putnbr.c ft_putnbr_unsig.c ft_puthex.c 
+SRCS = ft_printf.c ft_putchar.c ft_putstr.c ft_putnbr_base.c
 
 OBJECTS = $(addprefix $(SRCS_DIR), $(SRCS:.c=.o))
 DOTC = $(addprefix $(SRCS_DIR), $(SRCS))
