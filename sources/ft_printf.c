@@ -6,7 +6,7 @@
 /*   By: mrekalde <mrekalde@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 12:43:32 by mrekalde          #+#    #+#             */
-/*   Updated: 2023/10/17 18:57:55 by mrekalde         ###   ########.fr       */
+/*   Updated: 2023/10/25 13:20:26 by mrekalde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,19 @@ static int	check_variable(char c, va_list *ap)
 {
 	if (c == 'c')
 		return (ft_putchar(va_arg(*ap, int)));
-	if (c == 's')
+	else if (c == 's')
 		return (ft_putstr(va_arg(*ap, char *)));
-	if (c == 'p')
+	else if (c == 'p')
 		return (ft_putstr("0x") + ft_puthex(va_arg(*ap, size_t), 'x'));
-	if (c == 'd' || c == 'i')
+	else if (c == 'd' || c == 'i')
 		return (ft_putnbr(va_arg(*ap, int)));
-	if (c == 'u')
+	else if (c == 'u')
 		return (ft_putnbr_unsig(va_arg(*ap, unsigned int)));
-	if (c == 'x')
+	else if (c == 'x')
 		return (ft_puthex(va_arg(*ap, unsigned int), 'x'));
-	if (c == 'X')
+	else if (c == 'X')
 		return (ft_puthex(va_arg(*ap, unsigned int), 'X'));
-	if (c == '%')
+	else if (c == '%')
 		return (ft_putchar('%'));
 	return (0);
 }
